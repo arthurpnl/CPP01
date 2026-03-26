@@ -4,16 +4,18 @@
 int main(void)
 {
     std::string hiThisIs;
-    std::string *ptr;
-    std::string &ref = hiThisIs;
+    std::string *stringPTR;
+    std::string &stringREF = hiThisIs;
     
     hiThisIs = "HI THIS IS BRAIN";
-    ptr = &hiThisIs;
+    stringPTR = &hiThisIs;
+    
     std::cout << &hiThisIs << std::endl;
-    std::cout << ptr << std::endl;
-    std::cout << &ref << std::endl;
-    std::cout << *ptr << std::endl;
-    std::cout << ref << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
+    std::cout << hiThisIs << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
 
     return (0);
 }
