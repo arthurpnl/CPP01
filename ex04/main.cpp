@@ -16,9 +16,12 @@ void findAndReplace(std::string s1, std::string s2, std::ifstream &inputFile, st
 
     while (std::getline(inputFile, line))
     {
-        size_t pos = line.find(s1);
-        if (pos != std::string::npos)
+        size_t pos = 0;
+        while ((pos = line.find(s1, pos)) != std::string::npos)
+        {
             line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
+            pos += s2.length();
+        }
         outputFile << line << std::endl; 
     }
 }
